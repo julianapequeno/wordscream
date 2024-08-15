@@ -30,6 +30,7 @@
     <Param val="none" valType="str" updates="None" name="backgroundFit"/>
     <Param val="" valType="str" updates="None" name="backgroundImg"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
+    <Param val="float" valType="str" updates="None" name="clockFormat"/>
     <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
     <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
@@ -43,13 +44,16 @@
     <Param val="False" valType="bool" updates="None" name="elSimMode"/>
     <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
     <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
-    <Param val="words_sep" valType="str" updates="None" name="expName"/>
+    <Param val="words-area-segmentation" valType="str" updates="None" name="expName"/>
     <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
-    <Param val="None" valType="str" updates="None" name="eyetracker"/>
+    <Param val="MouseGaze" valType="str" updates="None" name="eyetracker"/>
+    <Param val="" valType="code" updates="None" name="frameRate"/>
+    <Param val="Attempting to measure frame rate of screen, please wait..." valType="str" updates="None" name="frameRateMsg"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
     <Param val="4242" valType="num" updates="None" name="gpPort"/>
     <Param val="ioHub" valType="str" updates="None" name="keyboardBackend"/>
     <Param val="exp" valType="code" updates="None" name="logging level"/>
+    <Param val="True" valType="bool" updates="None" name="measureFrameRate"/>
     <Param val="('MIDDLE_BUTTON',)" valType="list" updates="None" name="mgBlink"/>
     <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
     <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
@@ -65,6 +69,8 @@
     <Param val="1000" valType="num" updates="None" name="plPupilRemoteTimeoutMs"/>
     <Param val="False" valType="bool" updates="None" name="plPupillometryOnly"/>
     <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
+    <Param val="1" valType="code" updates="None" name="runMode"/>
+    <Param val="False" valType="bool" updates="None" name="rush"/>
     <Param val="time" valType="str" updates="None" name="sortColumns"/>
     <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
     <Param val="" valType="str" updates="None" name="tbModel"/>
@@ -112,6 +118,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="Teste" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <PolygonComponent name="polygon" plugin="None">
@@ -139,6 +146,7 @@
         <Param val="10" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
       <TextComponent name="text_origin" plugin="None">
@@ -164,6 +172,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="Teste" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <CodeComponent name="code" plugin="None">
@@ -240,6 +249,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="$tamanho" valType="str" updates="set every frame" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
@@ -282,6 +292,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="Teste" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <PolygonComponent name="polygon_3" plugin="None">
@@ -309,6 +320,7 @@
         <Param val="5" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
     </Routine>
@@ -370,6 +382,7 @@
         <Param val="3" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
       <TextComponent name="text_4" plugin="None">
@@ -395,6 +408,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="It can be a tricky thing to navigate deciding when to open doors for someone following you without awkwardly standing there for too long." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
@@ -437,6 +451,7 @@
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="$text.boundingBox" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
@@ -498,15 +513,112 @@
         <Param val="5" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="multi_line_approach">
+      <RoutineSettingsComponent name="multi_line_approach" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="multi_line_approach" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="code_5" plugin="None">
+        <Param val="&amp;#10;from psychopy.hardware import keyboard&amp;#10;&amp;#10;import psychopy.iohub as io&amp;#10;&amp;#10;import sys  # to get file system encoding&amp;#10;&amp;#10;import os  # handy system and path functions&amp;#10;&amp;#10;from numpy.random import random, randint, normal, shuffle, choice as randchoice&amp;#10;&amp;#10;from numpy import (sin, cos, tan, log, log10, pi, average,&amp;#10;&amp;#10;                   sqrt, std, deg2rad, rad2deg, linspace, asarray)&amp;#10;&amp;#10;import numpy as np  # whole numpy lib is available, prepend 'np.'&amp;#10;&amp;#10;from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,&amp;#10;&amp;#10;                                STOPPED, FINISHED, PRESSED, RELEASED, FOREVER, priority)&amp;#10;&amp;#10;from psychopy.tools import environmenttools&amp;#10;&amp;#10;from psychopy import sound, gui, visual, core, data, event, logging, clock, colors, layout, iohub, hardware" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import {keyboard} from 'psychopy/hardware';&amp;#10;import * as io from 'psychopy/iohub';&amp;#10;import * as sys from 'sys';&amp;#10;import * as os from 'os';&amp;#10;import {choice as randchoice, normal, randint, random, shuffle} from 'numpy/random';&amp;#10;import {asarray, average, cos, deg2rad, linspace, log, log10, pi, rad2deg, sin, sqrt, std, tan} from 'numpy';&amp;#10;import * as np from 'numpy';&amp;#10;import {FINISHED, FOREVER, NOT_STARTED, PAUSED, PLAYING, PRESSED, RELEASED, STARTED, STOPPED, priority} from 'psychopy/constants';&amp;#10;import {environmenttools} from 'psychopy/tools';&amp;#10;import {clock, colors, core, data, event, gui, hardware, iohub, layout, logging, sound, visual} from 'psychopy';&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="#AQUI" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="def get_word_positions(text_stim,height_word):&amp;#10;    &quot;&quot;&quot;&amp;#10;    Calculate the positions of words in a multi-line TextStim, accounting for varying line lengths.&amp;#10;    &quot;&quot;&quot;&amp;#10;    lines = text_stim.text.splitlines()&amp;#10;    word_positions = []&amp;#10;    &amp;#10;    # Estimate line height&amp;#10;    line_height = text_stim.height * 1.2&amp;#10;    &amp;#10;    for i, line in enumerate(lines):&amp;#10;        # Create a temporary TextStim to measure the width of the line&amp;#10;        line_stim = visual.TextStim(win, text=line, pos=(0, 0), color=text_stim.color, units='pix',height=height_word)&amp;#10;        line_width, line_height = line_stim.boundingBox&amp;#10;        &amp;#10;        # Determine the starting x position for the current line&amp;#10;        current_x = -line_width / 2&amp;#10;        &amp;#10;        # Calculate y position for the current line&amp;#10;        current_y = text_stim.pos[1] + (len(lines) / 2 - i) * line_height -16&amp;#10;        &amp;#10;        for word in line.split():&amp;#10;            # Create a temporary TextStim to measure the word width&amp;#10;            word_stim = visual.TextStim(win, text=word, pos=(0, 0), color=text_stim.color, units='pix',height=height_word)&amp;#10;            word_width, word_height = word_stim.boundingBox&amp;#10;            &amp;#10;            # Calculate the position (center of the word)&amp;#10;            word_position = (current_x + word_width / 2, current_y)&amp;#10;            &amp;#10;            # Store word info&amp;#10;            word_positions.append((word, word_position, word_width, word_height))&amp;#10;            &amp;#10;            # Move to the next word position (accounting for space between words)&amp;#10;            current_x += word_width + 5 # Space between words (use text size or adjust if needed)&amp;#10;    &amp;#10;    return word_positions&amp;#10;    &amp;#10;&amp;#10;# Calculate positions of each word&amp;#10;word_positions = get_word_positions(text_stim,text_stim.height)&amp;#10;&amp;#10;i = 0&amp;#10;roi_components = []&amp;#10;# Draw rectangles around each word&amp;#10;for word, pos, width, height in word_positions:&amp;#10;    rect_stim = visual.Rect(win, width=width * 1.1, height=height * 1.1,  # Some padding&amp;#10;                            pos=pos, lineColor='black', fillColor='pink', units='pix')&amp;#10;    word_i = visual.ROI(win, name=word, device=eyetracker,&amp;#10;        debug=False,&amp;#10;        shape='rectangle',&amp;#10;        pos=pos, size=(width * 1.1, height * 1.1), &amp;#10;        anchor='center', ori=0.0, depth=-2&amp;#10;        )&amp;#10;    roi_components.append(word_i)&amp;#10;    #eu devo adicionar mais funções para que o ROI funcione aqui? &amp;#10;    rect_stim.draw()&amp;#10;# Draw the text again so it appears on top of the rectangles&amp;#10;text_stim.draw()&amp;#10;# Display everything&amp;#10;win.flip()&amp;#10;&amp;#10;#printaar na tela&amp;#10;for r in roi_components:&amp;#10;    print(r.pos)&amp;#10;&amp;#10;# Wait 5 sec&amp;#10;core.wait(5)&amp;#10;&amp;#10;# clear any previous roi data&amp;#10;for r in roi_components:&amp;#10; r.reset()&amp;#10;&amp;#10;lista_def = []&amp;#10;for roi in roi_components:&amp;#10;    lista_def.append(roi)&amp;#10;&amp;#10;#isso aqui provavelmente será sobrescrito&amp;#10;multi_line_approachComponents = lista_def&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="for roi in roi_components:&amp;#10;&amp;#10;    # if roi is starting this frame...&amp;#10;&amp;#10;    if roi.status == NOT_STARTED and tThisFlip &gt;= 5-frameTolerance:&amp;#10;&amp;#10;        # keep track of start time/frame for later&amp;#10;&amp;#10;        roi.frameNStart = frameN  # exact frame index&amp;#10;&amp;#10;        roi.tStart = t  # local t and not account for scr refresh&amp;#10;&amp;#10;        roi.tStartRefresh = tThisFlipGlobal  # on global time&amp;#10;&amp;#10;        # time at next scr refresh&amp;#10;&amp;#10;        win.timeOnFlip(roi, 'tStartRefresh')&amp;#10;&amp;#10;        # add timestamp to datafile&amp;#10;&amp;#10;        thisExp.timestampOnFlip(win, roi.name+'.started')&amp;#10;&amp;#10;        # update status&amp;#10;&amp;#10;        roi.status = STARTED&amp;#10;&amp;#10;        roi.setAutoDraw(True)&amp;#10;&amp;#10;&amp;#10;&amp;#10;    # if roi is active this frame...&amp;#10;&amp;#10;    if roi.status == STARTED:&amp;#10;&amp;#10;        # update params&amp;#10;&amp;#10;        pass&amp;#10;&amp;#10;        # check whether roi has been looked in&amp;#10;&amp;#10;        if roi.isLookedIn:&amp;#10;&amp;#10;            if not roi.wasLookedIn:&amp;#10;&amp;#10;                # store time of first look&amp;#10;&amp;#10;                roi.timesOn.append(roi.clock.getTime())&amp;#10;&amp;#10;                # store time looked until&amp;#10;&amp;#10;                roi.timesOff.append(roi.clock.getTime())&amp;#10;&amp;#10;            else:&amp;#10;&amp;#10;                # update time looked until&amp;#10;&amp;#10;                roi.timesOff[-1] = roi.clock.getTime()&amp;#10;&amp;#10;            roi.wasLookedIn = True  # if roi is still looked at next frame, it is not a new look&amp;#10;&amp;#10;        else:&amp;#10;&amp;#10;            if roi.wasLookedIn:&amp;#10;&amp;#10;                # update time looked until&amp;#10;&amp;#10;                roi.timesOff[-1] = roi.clock.getTime()&amp;#10;&amp;#10;            roi.wasLookedIn = False  # if roi is looked at next frame, it is a new look&amp;#10;&amp;#10;    else:&amp;#10;&amp;#10;        roi.clock.reset()  # keep clock at 0 if roi hasn't started / has finished&amp;#10;&amp;#10;        roi.wasLookedIn = False  # if roi is looked at next frame, it is a new look&amp;#10;&amp;#10;&amp;#10;&amp;#10;    # if roi is stopping this frame...&amp;#10;&amp;#10;    if roi.status == STARTED:&amp;#10;&amp;#10;        # is it time to stop? (based on global clock, using actual start)&amp;#10;&amp;#10;        if tThisFlipGlobal &gt; roi.tStartRefresh + 5.0-frameTolerance:&amp;#10;&amp;#10;            # keep track of stop time/frame for later&amp;#10;&amp;#10;            roi.tStop = t  # not accounting for scr refresh&amp;#10;&amp;#10;            roi.frameNStop = frameN  # exact frame index&amp;#10;&amp;#10;            # add timestamp to datafile&amp;#10;&amp;#10;            thisExp.timestampOnFlip(win, roi.name+'.stopped')&amp;#10;&amp;#10;            # update status&amp;#10;&amp;#10;            roi.status = FINISHED&amp;#10;&amp;#10;            roi.setAutoDraw(False)" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="for (var roi, _pj_c = 0, _pj_a = roi_components, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    roi = _pj_a[_pj_c];&amp;#10;    if (((roi.status === NOT_STARTED) &amp;&amp; (tThisFlip &gt;= (5 - frameTolerance)))) {&amp;#10;        roi.frameNStart = frameN;&amp;#10;        roi.tStart = t;&amp;#10;        roi.tStartRefresh = tThisFlipGlobal;&amp;#10;        psychoJS.window.timeOnFlip(roi, &quot;tStartRefresh&quot;);&amp;#10;        psychoJS.experiment.timestampOnFlip(psychoJS.window, (roi.name + &quot;.started&quot;));&amp;#10;        roi.status = PsychoJS.Status.STARTED;&amp;#10;        roi.setAutoDraw(true);&amp;#10;    }&amp;#10;    if ((roi.status === PsychoJS.Status.STARTED)) {&amp;#10;        if (roi.isLookedIn) {&amp;#10;            if ((! roi.wasLookedIn)) {&amp;#10;                roi.timesOn.push(roi.clock.getTime());&amp;#10;                roi.timesOff.push(roi.clock.getTime());&amp;#10;            } else {&amp;#10;                roi.timesOff.slice((- 1))[0] = roi.clock.getTime();&amp;#10;            }&amp;#10;            roi.wasLookedIn = true;&amp;#10;        } else {&amp;#10;            if (roi.wasLookedIn) {&amp;#10;                roi.timesOff.slice((- 1))[0] = roi.clock.getTime();&amp;#10;            }&amp;#10;            roi.wasLookedIn = false;&amp;#10;        }&amp;#10;    } else {&amp;#10;        roi.clock.reset();&amp;#10;        roi.wasLookedIn = false;&amp;#10;    }&amp;#10;    if ((roi.status === PsychoJS.Status.STARTED)) {&amp;#10;        if ((tThisFlipGlobal &gt; ((roi.tStartRefresh + 5.0) - frameTolerance))) {&amp;#10;            roi.tStop = t;&amp;#10;            roi.frameNStop = frameN;&amp;#10;            psychoJS.experiment.timestampOnFlip(psychoJS.window, (roi.name + &quot;.stopped&quot;));&amp;#10;            roi.status = PsychoJS.Status.FINISHED;&amp;#10;            roi.setAutoDraw(false);&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="#AQUI" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="for (var roi, _pj_c = 0, _pj_a = roi_components, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    roi = _pj_a[_pj_c];&amp;#10;    psychoJS.experiment.addData((roi.name + &quot;.numLooks&quot;), roi.numLooks);&amp;#10;    if (roi.numLooks) {&amp;#10;        psychoJS.experiment.addData((roi.name + &quot;.timesOn&quot;), roi.timesOn);&amp;#10;        psychoJS.experiment.addData((roi.name + &quot;.timesOff&quot;), roi.timesOff);&amp;#10;    } else {&amp;#10;        psychoJS.experiment.addData((roi.name + &quot;.timesOn&quot;), &quot;&quot;);&amp;#10;        psychoJS.experiment.addData((roi.name + &quot;.timesOff&quot;), &quot;&quot;);&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="for roi in roi_components:&amp;#10;    thisExp.addData(roi.name+'.numLooks', roi.numLooks)&amp;#10;&amp;#10;    if roi.numLooks:&amp;#10;&amp;#10;        thisExp.addData(roi.name+'.timesOn', roi.timesOn)&amp;#10;&amp;#10;        thisExp.addData(roi.name+'.timesOff', roi.timesOff)&amp;#10;&amp;#10;    else:&amp;#10;&amp;#10;        thisExp.addData(roi.name+'.timesOn', &quot;&quot;)&amp;#10;&amp;#10;        thisExp.addData(roi.name+'.timesOff', &quot;&quot;)" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_5" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <EyetrackerRecordComponent name="etRecord" plugin="None">
+        <Param val="Start Only" valType="str" updates="None" name="actionType"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="etRecord" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </EyetrackerRecordComponent>
+      <TextComponent name="text_stim" plugin="None">
+        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="30" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="text_stim" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Juliana é linda" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <PolygonComponent name="polygon_5" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="-0.2549, 0.2392, 0.2549" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="polygon_5" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="eyetracker.getPos()" valType="list" updates="set every frame" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.35, 0.35)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
     </Routine>
   </Routines>
   <Flow>
-    <Routine name="trial"/>
-    <Routine name="tamanho_texto_comp"/>
-    <Routine name="tamanhos"/>
-    <Routine name="teste_display_palavras"/>
-    <Routine name="pillow"/>
+    <Routine name="multi_line_approach"/>
   </Flow>
 </PsychoPy2experiment>
