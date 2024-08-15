@@ -28,10 +28,10 @@ def get_word_positions(text_stim):
     return word_positions
 
 # Create a window
-win = visual.Window([800, 600], color='white', units='pix')
+win = visual.Window([1200, 1000], color='white', units='pix')
 
 # Define the text
-text_content = 'Hello World Example Text'
+text_content = 'Hello World Example Textthisith JUliana is beautiful'
 text_stim = visual.TextStim(win, text=text_content, pos=(0, 0), color='black', units='pix')
 
 # Draw the text to calculate the positions
